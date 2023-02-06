@@ -1,5 +1,7 @@
 import numpy as np
 from lu import decLU, solveLU
+
+
 n = 8
 A = -np.ones((n, n), 'float')
 
