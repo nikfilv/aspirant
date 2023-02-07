@@ -1,4 +1,5 @@
 import numpy as np
+import scipy
 
 print('A*x = b')
 
@@ -7,7 +8,14 @@ print(f'{A=}')
 b = np.matrix([4, 8, 10]).transpose()
 print(f'{b=}')
 
+
+print('numpy:')
 x = np.linalg.solve(A, b)
 print(f'{x=}')
+
+print('scipy:')
+x = scipy.linalg.solve(A, b)
+print(f'{x=}')
+
 
 print(f'{np.dot(A, x)=}')
