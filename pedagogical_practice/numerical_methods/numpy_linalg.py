@@ -3,9 +3,9 @@ import scipy
 
 print('A*x = b')
 
-A = np.matrix([[4, 3, -2], [1, 2, 1], [3, 2, 1]])
+A = np.array([[4, 3, -2], [1, 2, 1], [3, 2, 1]])
 print(f'{A=}')
-b = np.matrix([4, 8, 10]).transpose()
+b = np.array([4, 8, 10]).transpose()
 print(f'{b=}')
 
 
