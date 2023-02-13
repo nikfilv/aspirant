@@ -79,10 +79,16 @@ x = scipy.linalg.lu_solve((lu, piv), b)
 print(f'{x=}')
 
 """QR"""
+"""
+A = QR
+Ax = b
+QRx = b
+Rx = Q.transpose() * b
+"""
 q, r = scipy.linalg.qr(A)
 print(f'{q=}')
 print(f'{r=}')
-
+print(f'{np.dot(q.transpose(), b)}=')
 
 """Cholesky"""
 
