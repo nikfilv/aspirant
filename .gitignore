@@ -1,2 +1,5 @@
 my_env/
 __pycache__/
+
+*.pvd
+*.vtu
