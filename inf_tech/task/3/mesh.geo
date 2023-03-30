@@ -121,8 +121,8 @@ Plane Surface(4) = {4};
 Plane Surface(5) = {5};
 Plane Surface(6) = {6};
 
-Plane Surface(7) = {7, 2};
-Plane Surface(8) = {8, 3, 4, 5, 6};
+Plane Surface(7) = {7, 3, 4, 5, 6};
+Plane Surface(8) = {8, 2};
 
 // Physical Surface(1) = {1};
 // Physical Surface(2) = {2};
