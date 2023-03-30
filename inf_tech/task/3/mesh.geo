@@ -125,14 +125,15 @@ Plane Surface(7) = {7, 2};
 Plane Surface(8) = {8, 3, 4, 5, 6};
 
 // Physical Surface(1) = {1};
-Physical Surface(2) = {2};
-Physical Surface(3) = {3};
-Physical Surface(4) = {4};
-Physical Surface(5) = {5};
-Physical Surface(6) = {6};
+// Physical Surface(2) = {2};
+// Physical Surface(3) = {3};
+// Physical Surface(4) = {4};
+// Physical Surface(5) = {5};
+// Physical Surface(6) = {6};
 
-Physical Surface(7) = {7};
-Physical Surface(8) = {8};
+Physical Surface(1) = {8};
+Physical Surface(2) = {7};
+Physical Surface(3) = {2, 3, 4, 5, 6};
 
 Physical Line(1) = {102, 103};
 Physical Line(2) = {104, 105};
