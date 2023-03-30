@@ -136,6 +136,6 @@ Physical Surface(2) = {7};
 Physical Surface(3) = {2, 3, 4, 5, 6};
 
 Physical Line(1) = {102, 103};
-Physical Line(2) = {104, 105};
-Physical Line(3) = {2};
+Physical Line(2) = {2};
+Physical Line(3) = {104, 105};
 Physical Line(4) = {4};
