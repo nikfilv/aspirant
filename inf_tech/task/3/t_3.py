@@ -1,40 +1,53 @@
 from dolfin import *
 
 mesh = Mesh('mesh.xml')
-domains = MeshFunction('size_t' , mesh , 'mesh_physical_region.xml')
-boundaries = MeshFunction('size_t' , mesh , 'mesh_facet_region.xml')
+domains = MeshFunction('size_t', mesh, 'mesh_physical_region.xml')
+boundaries = MeshFunction('size_t', mesh, 'mesh_facet_region.xml')
 
 V = FunctionSpace(mesh, 'Lagrange', 1)
 
 dx = Measure('dx')(subdomain_data=domains)
 ds = Measure('ds')(subdomain_data=boundaries)
 
-f = Constant(1.0)
-g_1 = Constant(70.0)
-g_2 = Constant(20.0)
-g_3 = Constant(-30.0)
-g_4 = Constant (10000.0)
-alpha = Constant (150.0)
+f = Constant(0.0)
+g = Constant(1)
 
-bc_1 = DirichletBC(V, g_1, boundaries , 1)
-bc_2 = DirichletBC(V, g_2, boundaries , 2)
+u0_val = Constant(5.0)
+u0 = interpolate(u0_val, V)
 
-bcs = [bc_1 , bc_2]
+bc = DirichletBC(V, g, boundaries, 1)
 
-k_1 = Constant(1)
-k_2 = Constant(420)
+k_1 = Constant(0.1)
+k_2 = Constant(0.01)
+k_3 = Constant(100)
+
+C_1 = Constant(100)
+C_2 = Constant(100)
+C_3 = Constant(100)
+
+T = 60.0
+N = 10
+tau = T / N
 
 u = TrialFunction(V)
 v = TestFunction(V)
 
-a = k_1 * inner(grad(u), grad(v)) * dx(1) \
-        + k_2 * inner(grad(u), grad(v)) * dx(2) + alpha * u * v * ds(3)
-L = f * v * dx(1) + f * v * dx(2) + alpha * g_3 * v * ds(3) \
-        - g_4 * v * ds(4)
+a = (C_1 / tau) * u * v * dx(1) + \
+    (C_2 / tau) * u * v * dx(2) + \
+    k_1 * inner(grad(u), grad(v)) * dx(1) + \
+    k_2 * inner(grad(u), grad(v)) * dx(2) + \
+    k_3 * inner(grad(u), grad(v)) * dx(3) 
+L = (C_1 / tau) * u0 * v * dx(1) + \
+    (C_2 / tau) * u0 * v * dx(2) + \
+    (C_3 / tau) * u0 * v * dx(3) + \
+    f * v * dx(1) + f * v * dx(2) + f * v * dx(3)
 
 u = Function(V)
+file = File('./results/time_dep.pvd')
 
-solve(a == L, u, bcs)
-
-file = File('./poisson.pvd')
-file << u
+t = 0
+while t < T:
+    t += tau
+    solve(a == L, u, bc)
+    file << u
+    u0.assign(u)
