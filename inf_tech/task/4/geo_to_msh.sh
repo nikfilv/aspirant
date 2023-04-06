@@ -1,1 +1,1 @@
-gmsh -2 mesh.geo -format msh2
+gmsh -3 mesh.geo -format msh2

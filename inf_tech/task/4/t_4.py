@@ -21,8 +21,8 @@ k_1 = Constant(0.1)
 k_2 = Constant(0.01)
 k_3 = Constant(100)
 
-C_1 = Constant(100)
-C_2 = Constant(100)
+C_1 = Constant(1)
+C_2 = Constant(10)
 C_3 = Constant(100)
 
 T = 60.0
