@@ -141,8 +141,9 @@ Physical Line(3) = {104, 105};
 Physical Line(4) = {4};
 //+
 Extrude {0, 0, 1} {
-  Surface{5}; Surface{6}; Surface{7}; Surface{4}; Surface{3}; Surface{8}; Surface{2}; Layers {20}; Recombine;
+  Surface{5}; Surface{6}; Surface{7}; Surface{4}; Surface{3}; Surface{8}; Surface{2};
 }
+// Surface{5}; Surface{6}; Surface{7}; Surface{4}; Surface{3}; Surface{8}; Surface{2}; Layers {20}; Recombine;
 //+
 Physical Surface(360) = {312, 178};
 
