@@ -16,6 +16,8 @@ u0_val = Constant(5.0)
 u0 = interpolate(u0_val, V)
 
 bc = DirichletBC(V, g, boundaries, 360)
+# 360 номер физической области в geo файле
+# Как и для dx(1), dx(2), dx(3) 
 
 k_1 = Constant(0.1)
 k_2 = Constant(0.01)
