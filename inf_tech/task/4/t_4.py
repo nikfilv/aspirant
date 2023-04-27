@@ -15,7 +15,7 @@ g = Constant(1)
 u0_val = Constant(5.0)
 u0 = interpolate(u0_val, V)
 
-bc = DirichletBC(V, g, boundaries, 1)
+bc = DirichletBC(V, g, boundaries, 360)
 
 k_1 = Constant(0.1)
 k_2 = Constant(0.01)

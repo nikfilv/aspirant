@@ -148,8 +148,8 @@ Extrude {0, 0, 1} {
 Physical Surface(360) = {312, 178};
 
 //+
-Physical Volume(361) = {6};
+Physical Volume(1) = {6};
 //+
-Physical Volume(362) = {3};
+Physical Volume(2) = {3};
 //+
-Physical Volume(363) = {1, 2, 4, 5, 7};
+Physical Volume(3) = {1, 2, 4, 5, 7};
