@@ -42,3 +42,4 @@ Physical Surface(2) = {2};
 
 Physical Line(1) = {8};
 Physical Line(2) = {1, 2, 3, 5, 6, 7};
+Physical Line(3) = {4};
