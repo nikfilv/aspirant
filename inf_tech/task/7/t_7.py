@@ -11,6 +11,7 @@ ds = Measure('ds')(subdomain_data=boundaries)
 
 f = Constant(0.0)
 g = Constant(150)
+g_1 = Constant(-1)
 
 u0_val = Constant(0)
 u0 = interpolate(u0_val, V)
@@ -26,7 +27,7 @@ alpha_2 = 100
 C_1 = Constant(0.5)
 C_2 = Constant(4.1806)
 
-T = 500
+T = 60
 N = 20
 tau = T / N
 
@@ -42,9 +43,9 @@ a = (C_1 / tau) * u * v * dx(1) + \
 L = (C_1 / tau) * u0 * v * dx(1) + \
     (C_2 / tau) * u0 * v * dx(2) + \
     f * v * dx(1) + \
-    f * v * dx(2) #- \
-    #alpha_1 * g * v * ds(2) - \
-    #alpha_2 * g * v * ds(3)
+    f * v * dx(2) + \
+    alpha_1 * g_1 * v * ds(2) + \
+    alpha_2 * g_1 * v * ds(3)
 
 u = Function(V)
 file = File('./results/time_dep.pvd')
