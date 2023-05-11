@@ -400,10 +400,19 @@ Surface Loop(4) = {19, 22, 23, 24, 21, 20};
 //+
 Volume(4) = {4};
 //+
-Surface Loop(5) = {26, 25, 33, 32, 31, 38, 28, 29, 6, 14, 36};
+Surface Loop(5) = {6, 29, 14, 25, 26, 28, 20, 27, 8, 30, 31, 32, 33, 34, 35, 38, 37};
 //+
 Volume(5) = {5};
 //+
 Surface Loop(6) = {43, 41, 40, 39, 42, 37};
 //+
 Volume(6) = {6};
+
+//+
+Physical Surface(1) = {38};
+//+
+Physical Surface(2) = {42};
+//+
+Physical Surface(3) = {1, 13, 19, 7};
+//+
+Physical Volume(1) = {1, 2, 3, 4, 5, 6};
