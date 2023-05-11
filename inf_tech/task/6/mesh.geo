@@ -1,5 +1,3 @@
-SetFactory('OpenCASCADE');
-
 p = 0.25;
 
 a = 1;
@@ -333,16 +331,14 @@ Plane Surface(26) = {26};
 Curve Loop(27) = {38, -41, 37, -47};
 //+
 Plane Surface(27) = {27};
-//+//+
-BooleanUnion{ Surface{6}; Delete;}{Surface{8}; Surface{13}; Surface{24}; Surface{28}; Delete; }
 
 Curve Loop(28) = {39, 42, 41, 40};
 //+
 Plane Surface(28) = {28};
 //+
-Curve Loop(37) = {44, 45, -43, 39};
+Curve Loop(29) = {44, 45, -43, 39};
 //+
-Plane Surface(29) = {37};
+Plane Surface(29) = {29};
 //+
 Curve Loop(30) = {-38, -46, -43, -42};
 //+
