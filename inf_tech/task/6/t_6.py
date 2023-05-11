@@ -7,7 +7,7 @@ boundaries = MeshFunction("size_t", mesh, meshname + "_facet_region.xml")
 
 mu = 0.8*1.0e11
 lmbda = 1.25*1.0e11
-f2 = Constant((0.0, 1.0e2, 0))
+f2 = Constant((1.0e2, 0, 0))
 f1 = Constant((0.0, 0, -1.0e8))
 g = Constant(0.0)
 
