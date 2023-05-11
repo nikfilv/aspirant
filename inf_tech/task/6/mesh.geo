@@ -1,3 +1,5 @@
+SetFactory('OpenCASCADE');
+
 p = 0.25;
 
 a = 1;
@@ -197,9 +199,10 @@ Line(69) = {40, 36};
 //+
 Line(70) = {38, 42};
 //+
-Line(71) = {37, 41};//+
-Curve Loop(1) = {33, -29, 25, -34};
+Line(71) = {37, 41};
 
+//+
+Curve Loop(1) = {33, -29, 25, -34};
 //+
 Plane Surface(1) = {1};
 //+
@@ -305,7 +308,7 @@ Curve Loop(22) = {55, -60, 54, 50};
 //+
 Plane Surface(22) = {22};
 //+
-Curve Loop(23) = {-56, -57, -55, 51};
+Curve Loop(23) = {51, -56, -57, -55};
 //+
 Plane Surface(23) = {23};
 //+
@@ -330,14 +333,16 @@ Plane Surface(26) = {26};
 Curve Loop(27) = {38, -41, 37, -47};
 //+
 Plane Surface(27) = {27};
-//+
+//+//+
+BooleanUnion{ Surface{6}; Delete;}{Surface{8}; Surface{13}; Surface{24}; Surface{28}; Delete; }
+
 Curve Loop(28) = {39, 42, 41, 40};
 //+
 Plane Surface(28) = {28};
 //+
-Curve Loop(29) = {-39, 43, -45, -44};
+Curve Loop(37) = {44, 45, -43, 39};
 //+
-Plane Surface(29) = {29};
+Plane Surface(29) = {37};
 //+
 Curve Loop(30) = {-38, -46, -43, -42};
 //+
@@ -349,7 +354,7 @@ Surface Loop(5) = {25, 26, 27, 28, 29, 30};
 Volume(5) = {5};
 
 //+
-Curve Loop(31) = {62, 71, 66, -70};
+Curve Loop(31) = {-62, 70, -66, -71};
 //+
 Plane Surface(31) = {31};
 //+
@@ -382,3 +387,4 @@ Physical Volume(1) = {1, 2, 3, 4, 5, 6};
 Physical Surface(1) = {5};
 Physical Surface(2) = {31};
 Physical Surface(3) = {14, 9, 25, 19};
+
