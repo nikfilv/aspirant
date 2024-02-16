@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Xdmf Version="3.0">
+  <Domain>
+    <Grid Name="mesh" GridType="Uniform">
+      <Topology NumberOfElements="10000" TopologyType="Quadrilateral" NodesPerElement="4">
+        <DataItem Dimensions="10000 4" NumberType="UInt" Format="HDF">k.h5:/Mesh/mesh/topology</DataItem>
+      </Topology>
+      <Geometry GeometryType="XY">
+        <DataItem Dimensions="10201 2" Format="HDF">k.h5:/Mesh/mesh/geometry</DataItem>
+      </Geometry>
+      <Attribute Name="f_15" AttributeType="Scalar" Center="Cell">
+        <DataItem Dimensions="10000 1" Format="HDF">k.h5:/VisualisationVector/0</DataItem>
+      </Attribute>
+    </Grid>
+  </Domain>
+</Xdmf>
